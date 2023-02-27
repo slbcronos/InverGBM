@@ -5,7 +5,7 @@
 package slcomputacion.invergbm;
 
 import Clases.Inver;
-import java.util.Scanner;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import java.text.NumberFormat;
 
@@ -20,12 +20,6 @@ public class InverGBM {
         NumberFormat formatoImporte = NumberFormat.getCurrencyInstance();
         Inver in = new Inver();
         
-        //Scanner leer = new Scanner(System.in);
-        
-        //double cantidad;
-        
-        double cantidad = Float.parseFloat(JOptionPane.showInputDialog("Digite la cantidad a Invertir "));
-        in.setCAntidadInversion(cantidad);
         /*
         //in.toString();
         System.out.println("=================================================================");
@@ -34,10 +28,24 @@ public class InverGBM {
         System.out.printf ("Anual = %6.4f, Mensual = %6.4f, Diario = %6.4f %n", in.cantidadAno(), in.cantidadMes(),in.cantidadDia());
         System.out.println("=================================================================");
         */
-        JOptionPane.showMessageDialog(null, "Anual:      " + formatoImporte.format(in.cantidadAno()) + "\nMensual: " +formatoImporte.format (in.cantidadMes())+ "\nDiario:      "+ formatoImporte.format(in.cantidadDia()));
-        
-        System.gc();
-        System.exit(0); //Salir del Programa    
+        boolean repetir = true;
+        while (repetir) {
+            try {
+                
+                double cantidad = Float.parseFloat(JOptionPane.showInputDialog("Digite la cantidad a Invertir "));
+                in.setCAntidadInversion(cantidad);//caso = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la manera quiere imprimir la bienvenida(1-scanner,2-Panel)"));
+                
+                JOptionPane.showMessageDialog(null, "Anual:      " + formatoImporte.format(in.cantidadAno()) + "\nMensual: " +formatoImporte.format (in.cantidadMes())+ "\nDiario:      "+ formatoImporte.format(in.cantidadDia()));
+                repetir = false;
+                
+                System.gc();
+                System.exit(0); //Salir del Programa
+            } catch (HeadlessException | NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Cadena ingresada, debe ingresar un valor numerico", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                //caso = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la manera quiere imprimir la bienvenida(1-scanner,2-Panel)"));
+            }
+
+        }
         
     }
 }
