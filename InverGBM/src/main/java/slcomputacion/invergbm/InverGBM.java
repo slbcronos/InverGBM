@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import java.text.NumberFormat;
 
 
+
 /**
  *
  * @author slcomputacion
@@ -35,7 +36,7 @@ public class InverGBM {
                 double cantidad = Float.parseFloat(JOptionPane.showInputDialog("Digite la cantidad a Invertir "));
                 in.setCAntidadInversion(cantidad);//caso = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la manera quiere imprimir la bienvenida(1-scanner,2-Panel)"));
                 
-                JOptionPane.showMessageDialog(null, "Anual:      " + formatoImporte.format(in.cantidadAno()) + "\nMensual: " +formatoImporte.format (in.cantidadMes())+ "\nDiario:      "+ formatoImporte.format(in.cantidadDia()));
+                JOptionPane.showMessageDialog(null, "Anual:      " + formatoImporte.format(in.cantidadAno()) + "\nMensual: " +formatoImporte.format (in.cantidadMes())+ "\nDiario:      "+ formatoImporte.format(in.cantidadDia()),"Inversion", JOptionPane.INFORMATION_MESSAGE);
                 repetir = false;
                 
                 System.gc();
