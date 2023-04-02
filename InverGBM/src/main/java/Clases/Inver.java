@@ -10,9 +10,9 @@ package Clases;
  */
 public class Inver {
     // private static final double interes = 0.875;
-    private double interes = 0.875;
-    private int meses = 12;
-    private int dias = 30;
+    private final double interes = 0.875;
+    private final int meses = 12;
+    private final int dias = 30;
     private double cantidadInversion;
 
     public Inver() {
@@ -31,17 +31,6 @@ public class Inver {
         return dias;
     }
 
-    public void setInteres(double interes) {
-        this.interes = interes;
-    }
-
-    public void setMeses(int meses) {
-        this.meses = meses;
-    }
-
-    public void setDias(int dias) {
-        this.dias = dias;
-    }
 
     public double getCantidadInversion() {
         return cantidadInversion;
