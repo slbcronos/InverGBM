@@ -9,8 +9,8 @@ package Clases;
  * @author slcomputacion
  */
 public class Inver {
-    // private static final double interes = 0.875;
-    private final double interes = 0.90;
+    // private static final double interes = 0.85;
+    private final double interes = 0.85; //Abril 2024
     private final int meses = 12;
     private final int dias = 30;
     private double cantidadInversion;
